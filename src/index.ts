@@ -1,3 +1,4 @@
+import { ToDoModel } from './components/ToDoModel';
    //*++ ОСНОВНАЯ ЛОГИКА
                    //**ОБЪЯСНЕНИЕ КОДА; ОСНОВНОЙ СКРИПТ С ОСНОВНОЙ ЛОГИКОЙ**
 
@@ -43,3 +44,15 @@ todos.forEach(item => {
 })
  
 // даем возможность пользователю добавлять новые дела. создаем форму как объект и повесить обраотчик
+
+
+
+// //как проверить работу данных сервера 
+// const todoArray = new ToDoModel();
+// todoArray.items = todos;
+// //+создать новый метод что показовал коректное изменение
+// console.log(todoArray.items.map(item => item));
+// console.log(todoArray.addItem('Создать класс с данными'));
+// console.log(todoArray.items);
+// todoArray.removeItem('2');
+// console.log(todoArray.items);
