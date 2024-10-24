@@ -31,7 +31,8 @@ export class Form implements IForm{
 
 	//получает в конструктор темплейт.  сохраняем их в полях класса
 	constructor(formTemplate: HTMLTemplateElement) {
-		this.formElement = formTemplate.content.querySelector('.todos__form').cloneNode(true) as HTMLFormElement;
+		this.formElement = formTemplate.content.querySelector('.todos__form')
+.cloneNode(true) as HTMLFormElement;
 			//сохраняем их в полях класса
 		this.inputField = this.formElement.querySelector('.todo-form__input');
 		this.submitButton = this.formElement.querySelector(

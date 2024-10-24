@@ -15,4 +15,6 @@ export interface IToDoModel {
 	addItem:(data: string) => IItem;
 //удаляем какой-то существующий объект. обязательно указываем id => в случае удаления ничего не возвращает void
 removeItem:(id: string) => void;
+  //ВОЗВРАЩАЕТ одно дело по id(один элемент массива)
+getItem: (id: string) => IItem;
 }

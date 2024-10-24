@@ -16,7 +16,7 @@ export class Page implements IPage{
 			this._formContainer = this.container.querySelector('.todo-form-container');
 			this._todoContainer = this.container.querySelector('.todos__list')
 	}
-//устанавливает содержимое для списка дел, передаем массив из HTMLElement
+//устанавливает содержимое для списка дел, передаем массив из 
 	set todoContainer(items: HTMLElement[]) {
 			this._todoContainer.replaceChildren(...items);
 	}
