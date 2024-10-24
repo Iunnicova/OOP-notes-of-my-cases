@@ -17,4 +17,6 @@ export interface IToDoModel {
 removeItem:(id: string) => void;
   //ВОЗВРАЩАЕТ одно дело по id(один элемент массива)
 getItem: (id: string) => IItem;
+  //редактируем название дела
+editItem: (id: string, name: string) => void
 }

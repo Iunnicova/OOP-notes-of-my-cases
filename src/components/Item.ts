@@ -13,7 +13,7 @@ export interface IViewItem {
   //принимает функцию и ее устанавливать как обработчик для кнопки копирования
   setCopyHandler(handleCopyItem: Function): void;
 	//метод установки слушателя для редактирования
-	// setEditHandler(handleCopyItem: Function): void; 
+	setEditHandler(handleCopyItem: Function): void; 
 }
 
 //интерфейс для конструктора описывает параметры
@@ -32,12 +32,16 @@ export class Item implements IViewItem {
   protected deleteButton: HTMLButtonElement;
   //поле для хранения кнопки (копирования)
   protected copyButton: HTMLButtonElement;
+	//поле для хранения кнопки (редактирования)
+	protected editButton: HTMLButtonElement;
   //определяем новое свойство которое будет отвечать за хранение id задач. даем название с черточкой-будем использовать set и get
   protected _id: string;
   //поле для хранения обработчика кнопки
   protected handleDeleteItem: Function;
   //поле для хранения обработчика кнопки
   protected handleCopyItem: Function;
+	//поле для хранения обработчика кнопки
+	protected handleEditItem: Function;
 
   //конструктор это та функция которая вызывается при создание экземпляра  класса карточки т.е  как только написали new и указали свой класс у нас запускается функция конструктора те параметры которые прописываются в функции конструктор нужно будет заполнять и передовать аргументы в них при создании экземпляра. Мы пишем new название класса и дальше в скобочках перечисляются аргументы которые попадут в функцию конструктор.Функция сонструктор предназначена для какого то начального заполнения и создания вот того самого объекта с которым в последствие буду работать
   constructor(template: HTMLTemplateElement) {
@@ -51,6 +55,9 @@ export class Item implements IViewItem {
     this.deleteButton = this.itemElement.querySelector(".todo-item__del");
     //находим кнопку копирования по классу
     this.copyButton = this.itemElement.querySelector(".todo-item__copy");
+
+		//находим кнопку редактирования по классу
+		this.editButton = this.itemElement.querySelector(".todo-item__edit");
     //сохранив это в полях класса мы можем использовать эти свойства в любом методе который будет в нашем классе
   }
 
@@ -94,7 +101,17 @@ export class Item implements IViewItem {
       this.handleCopyItem(this);
     });
   }
-
+	//метод для установки слушателя на кнопку редактирования
+	setEditHandler(handleEditItem: Function) {
+		// сохраняем его в  классе
+    this.handleEditItem = handleEditItem;
+    // устанавливаем как обработчик на кнопку клик
+    this.editButton.addEventListener("click", (evt) => {
+      //в качестве параметра будем передавать экземпляр самого класса для того чтобы можно было в обработчике прописать любые действия, которые нам могут понадобиться
+      this.handleEditItem(this);
+    });
+  }
+	
   // метод render тот самый метод который будет нам возвращать разметку карточки. Выносим этот функционал в отдельнвый метод мы знаем что текст карточки будет меняться в будущем карточки будут копироватся удалаться или редоктироватся. если мы хотим получить карточку с какимто другим названием не item то мы можем вызвать метод рендер с переданным новым названием. и нам вернется карточка текст которой будет изменен.
   //IItem - добавляем с интерфейса папка type
   //хранение имени в рендере будет при помощи сеттера, что бы код не дублировался

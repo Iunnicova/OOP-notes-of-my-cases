@@ -30,9 +30,9 @@
 
 .todo-form__input {
   background: white;
-  border-radius: 5px;
-  font-size: 32.6px;
-  padding: 21px;
+  /* border-radius: 15px; */
+  font-size: 28px;
+  padding: 22px;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -42,14 +42,14 @@
 
 .todo-form__submit-btn {
   background: white;
-  font-size: 24px;
-  padding: 21px;
-  border-radius: 5px;
+  font-size: 28px;
+  padding: 22px;
+  /* border-radius: 15px; */
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 900;
   border: none;
-  margin-left: 10px;
+  margin-left: 55px;
   cursor: pointer;
 }
 
@@ -159,12 +159,12 @@
 }
 
 .popup__container {
-  max-width: 700px;
+  max-width: 800px;
   width: 100%;
   min-height: 100px;
   background-color: #696969;
   border: white 2px solid;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   position: relative;
   box-sizing: border-box;
   padding: 34px 36px;
