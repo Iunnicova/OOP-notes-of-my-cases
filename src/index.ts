@@ -27,7 +27,13 @@ todoArray.items = todos;
 const modal = new Popup(popupElement);
 
 //создаем призентер, в конструктор призентера мы передаем нашу модель с данными todoArray, класс Form(жесткой завязки к классу нет),itemContainer(это наша страничка, мы ее передаем что бы в ней можно было разместить форму,карточки ) и класс Item (как класс конструктор который соответствует интерфуйсу )
-const itemPresenter = new ItemPresenter(todoArray, Form, itemContainer, Item, modal);
+const itemPresenter = new ItemPresenter(
+  todoArray,
+  Form,
+  itemContainer,
+  Item,
+  modal
+);
 
 //вызываем init с помощью которого создается форма, разметка формы и устанавливается слушатель на кнопку сомбит
 itemPresenter.init();
