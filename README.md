@@ -1,4 +1,4 @@
-# "OOP-notes-of-my-cases"
+# Проектная работа "Веб-ларек"
 
 Стек: HTML, SCSS, TS, Webpack
 
